@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('Hi');
+    // Interpolated
+    console.log('Hi I am a new %s string','*');
+    // Styled
+    console.log('%cI am colored string', 'color: red');
+    // warning!
+    console.warn('This is warning')
+    // Error :|
+    console.error('This is error')
+    // Info
+    console.info('This is info')
+    // Testing
+    console.assert(1===1, "This will not be printed")
+    console.assert(0===1, "This will be printed")
+    // clearing
+    // console.clear()
+    // Viewing DOM Elements
+    const p = document.querySelector('p')
+    console.dir(p)
+    // Grouping together
+    dogs.forEach(dog => {
+        console.groupCollapsed(`${dog.name}`)
+            console.log(`This is ${dog.name}`)
+            console.log(`${dog.name} is ${dog.age} years old`)
+        console.groupEnd(`${dog.name}`)
+    })
+    // counting
+    console.count('Wes')
+    console.count('Wes')
+    console.count('Wes')
+    console.count('Wes')
+    console.count('Wes')
+    // // timing
+    // console.time('Fetch data')
+    // fetch('fetch data here')
+    // console.timeEnd('Fetch data')
+
+    // table
+
+    console.table(dogs)
+  </script>
+</body>
+</html>
