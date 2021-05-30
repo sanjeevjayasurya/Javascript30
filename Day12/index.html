@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+    <div class="cheat"></div>
+  </head>
+  <body>
+    <script>
+      const pressed = [];
+      const secretCode = "rocketman";
+      const cheatCode = document.querySelector(".cheat");
+      window.addEventListener("keyup", (e) => {
+        pressed.push(e.key);
+        pressed.splice(
+          -secretCode.length - 1,
+          pressed.length - secretCode.length
+        );
+        if (pressed.join('') == secretCode) {
+          cheatCode.innerHTML = "Cheat Code Activated!!!!";
+        }
+      });
+    </script>
+  </body>
+</html>
